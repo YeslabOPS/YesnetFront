@@ -24,41 +24,41 @@ export default function OperationPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-4">运维命令发送</h2>
+    <div className="min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+      <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
+        <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">运维命令发送</h2>
         <div className="mb-4">
-          <label className="block text-gray-700">设备名/IP</label>
+          <label className="block text-gray-700 font-semibold">设备名/IP</label>
           <input 
             type="text" 
             value={deviceName} 
             onChange={(e) => setDeviceName(e.target.value)} 
-            className="mt-1 p-2 w-full border rounded"
+            className="mt-1 p-3 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
             required 
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700">命令</label>
+          <label className="block text-gray-700 font-semibold">命令</label>
           <input 
             type="text" 
             value={command} 
             onChange={(e) => setCommand(e.target.value)} 
-            className="mt-1 p-2 w-full border rounded"
+            className="mt-1 p-3 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
             required 
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-6">
           <label className="inline-flex items-center">
             <input 
               type="checkbox" 
               checked={isLoop} 
               onChange={(e) => setIsLoop(e.target.checked)} 
-              className="form-checkbox"
+              className="form-checkbox h-5 w-5 text-blue-600"
             />
-            <span className="ml-2">持续运行</span>
+            <span className="ml-2 text-gray-700">持续运行</span>
           </label>
         </div>
-        <button type="submit" className="bg-blue-500 text-white p-2 rounded w-full">发送命令</button>
+        <button type="submit" className="bg-blue-500 text-white p-3 rounded-lg w-full hover:bg-blue-600 transition duration-300">发送命令</button>
       </form>
     </div>
   );
